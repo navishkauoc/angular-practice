@@ -14,5 +14,11 @@ export class AppComponent {
 
   addBeverage(newBeverage: string) {
     this.beverages.push(newBeverage);
+    this.clearInput();
+  }
+
+  clearInput() {
+    let input = <HTMLInputElement>document.getElementById('beverage-input');
+    input.value = '';
   }
 }
