@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ngxPermissionsService.loadPermissions(['DEVELOPER']);
+    // this.ngxPermissionsService.loadPermissions(['DEVELOPER']);
   }
 
 }
