@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxPermissionsService } from 'ngx-permissions';
+import { LoadPermissionsService } from './service/load-permissions.service';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,18 @@ import { NgxPermissionsService } from 'ngx-permissions';
 export class AppComponent implements OnInit {
   title = 'handling-authorizations';
 
-  constructor(private ngxPermissionsService: NgxPermissionsService) {
-
+  constructor(
+    private loadPermissionsService: LoadPermissionsService,
+    private ngxPermissionsService: NgxPermissionsService) {
   }
 
   ngOnInit(): void {
     // this.ngxPermissionsService.loadPermissions(['DEVELOPER']);
+
+    // Load permissions using main component
+    this.loadPermissionsService.loadPermissions().then((data) => {
+      this.ngxPermissionsService.loadPermissions(data);
+    })
   }
 
 }

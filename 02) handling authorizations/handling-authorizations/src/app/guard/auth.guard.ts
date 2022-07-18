@@ -13,6 +13,7 @@ export class AuthGuard implements CanActivate {
     private ngxPermissionsService: NgxPermissionsService) {
   }
 
+  // Load permissions using guard
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
